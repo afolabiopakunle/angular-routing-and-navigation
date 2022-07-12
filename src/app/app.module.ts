@@ -12,9 +12,10 @@ import { PostComponent } from './post/post.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 const routes: Route[] = [
   {path: '', component: HomeComponent },
+  {path: 'followers/:username', component: ProfileComponent},
   {path: 'followers', component: FollowersComponent},
-  {path: 'profile/:username', component: ProfileComponent},
-  {path: 'posts', component: PostComponent}
+  {path: 'posts', component: PostComponent},
+  {path: '**', component: PageNotFoundComponent}
 ]
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routes) ],
